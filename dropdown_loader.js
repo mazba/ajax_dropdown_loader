@@ -4,18 +4,24 @@
 $(function(){
     var selectWrpId = 'dropdwon-loader';
     var windowWrpId = 'window-loader';
+    var dropdownGifUrl = DropdownLoader.pluginUrl+'/img/1.gif';
+    var windowGifUrl = DropdownLoader.pluginUrl+'/img/5.gif';
+    //adding css to dom
+    $('head').append('<link rel="stylesheet" href="'+DropdownLoader.pluginUrl+'/loader.css" type="text/css" />');
+    //adding window loader to dom
+    var windowLoaderImg = '<div id="'+windowWrpId+'"><img src="'+windowGifUrl+'"</div>';
+    $(document.body).append(windowLoaderImg);
     jQuery(document).ajaxStart(function(e)
     {
         try {
             var $el = $(e.target.activeElement);
-            var img = '<div id="'+selectWrpId+'"><img src="'+DropdownLoader.pluginUrl+'/1.gif"</div>';
             if($el.is('select')){
+                var img = '<div id="'+selectWrpId+'"><img src="'+dropdownGifUrl+'"</div>';
                 $el.after(img);
                 var $loaderWrp = $('#'+selectWrpId);
-                $loaderWrp.find('img').css({width:'28px',padding:'3px'});
             }
             else{
-                $(document.body)
+                $('#'+windowWrpId).show();
             }
 
         } catch (ex) {
@@ -26,8 +32,13 @@ $(function(){
     {
         try {
             var $el = $(e.target.activeElement);
-            console.log($el.siblings(selectWrpId));
-            $el.siblings('#'+selectWrpId).remove();
+            if($el.is('select')){
+                console.log($el.siblings(selectWrpId));
+                $el.siblings('#'+selectWrpId).remove();
+            }
+            else{
+                $('#'+windowWrpId).hide();
+            }
 
         } catch (ex) {
             console.log(ex);

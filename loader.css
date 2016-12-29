@@ -1,0 +1,23 @@
+/*dropdown loader*/
+#dropdwon-loader img{
+    width: 28px;
+    padding: 3px;
+}
+/*window loader*/
+#window-loader{
+    width: 100%;
+    height: 100%;
+    background: #000;
+    position: fixed;
+    top: 1px;
+    z-index: 9999;
+    opacity: .55;
+    display: none;
+}
+#window-loader img {
+    position: fixed;
+    top: 314px;
+    left: 737px;
+    width: 57px;
+    z-index: 9999;
+}
