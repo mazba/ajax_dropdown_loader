@@ -21,7 +21,7 @@ $(function(){
                 var $loaderWrp = $('#'+selectWrpId);
             }
             else{
-                $('#'+windowWrpId).show();
+                $('#'+windowWrpId).fadeIn(350);
             }
 
         } catch (ex) {
@@ -37,7 +37,7 @@ $(function(){
                 $el.siblings('#'+selectWrpId).remove();
             }
             else{
-                $('#'+windowWrpId).hide();
+                $('#'+windowWrpId).fadeOut(350);
             }
 
         } catch (ex) {
