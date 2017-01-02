@@ -4,8 +4,8 @@
 $(function(){
     var selectWrpId = 'dropdwon-loader';
     var windowWrpId = 'window-loader';
-    var dropdownGifUrl = DropdownLoader.pluginUrl+'/img/1.gif';
-    var windowGifUrl = DropdownLoader.pluginUrl+'/img/5.gif';
+    var dropdownGifUrl = DropdownLoader.dropdownGifUrl || DropdownLoader.pluginUrl+'/img/1.gif';
+    var windowGifUrl = DropdownLoader.dropdownGifUrl || DropdownLoader.pluginUrl+'/img/5.gif';
     //adding css to dom
     $('head').append('<link rel="stylesheet" href="'+DropdownLoader.pluginUrl+'/loader.css" type="text/css" />');
     //adding window loader to dom
